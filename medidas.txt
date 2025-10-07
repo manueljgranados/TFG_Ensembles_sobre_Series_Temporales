@@ -1,0 +1,142 @@
+DELTA por cuantiles:
+
+GRU:
+Escenario S:
+Grid δ (calibrado con cuantiles |e| en VAL): [0.00853496789932251, 0.01, 0.017357412725687027, 0.02, 0.03049677610397339, 0.04116208553314208, 0.05, 0.1]
+>>> Mejor δ por val_log_cosh: 0.017357412725687027 (val_log_cosh=0.038430746645)
+Resultados TEST - Escenario S (GRU)
+  loss (Huber):              0.028245
+  log_cosh:                  1.329280
+  within_eps_0_005          : 0.006719
+  within_eps_0_01           : 0.012578
+  within_eps_0_02           : 0.023047
+  within_eps_0_05           : 0.056838
+  within_eps_0_1            : 0.125223
+  AUTC[0.005–0.100]:         0.062907
+
+Escenario M:
+Grid δ (calibrado con cuantiles |e| en VAL): [0.01, 0.014598846435546875, 0.02, 0.02976226806640625, 0.05, 0.051824706792831444, 0.07143068313598633, 0.1]
+>>> Mejor δ por val_log_cosh: 0.1 (val_log_cosh=0.044629305601)
+Resultados TEST - Escenario M (GRU)
+  loss (Huber):              0.166591
+  log_cosh:                  1.432272
+  within_eps_0_005          : 0.004535
+  within_eps_0_01           : 0.008254
+  within_eps_0_02           : 0.016219
+  within_eps_0_05           : 0.044333
+  within_eps_0_1            : 0.090744
+  AUTC[0.005–0.100]:         0.046732
+
+Escenario L:
+Grid δ (calibrado con cuantiles |e| en VAL): [0.01, 0.02, 0.02793753147125244, 0.05, 0.05683806538581848, 0.09924322143197067, 0.1, 0.13649090826511381]
+>>> Mejor δ por val_log_cosh: 0.02793753147125244 (val_log_cosh=0.058244042099)
+Resultados TEST - Escenario L (GRU)
+  loss (Huber):              0.052311
+  log_cosh:                  1.531102
+  within_eps_0_005          : 0.002755
+  within_eps_0_01           : 0.005682
+  within_eps_0_02           : 0.012013
+  within_eps_0_05           : 0.032728
+  within_eps_0_1            : 0.070148
+  AUTC[0.005–0.100]:         0.035290
+
+=== Mejor δ por escenario (GRU, métrica común: val_log_cosh) ===
+  S: 0.017357412725687027  -> ./models_gru_huber_sweep/gru_huber_w20_h1_delta0_01735741273_S.keras
+  M: 0.1  -> ./models_gru_huber_sweep/gru_huber_w60_h5_delta0_1_M.keras
+  L: 0.02793753147125244  -> ./models_gru_huber_sweep/gru_huber_w120_h20_delta0_02793753147_L.keras
+
+
+CNN:
+Escenario S:
+Grid δ (calibrado con cuantiles |e| en VAL): [0.00853496789932251, 0.01, 0.017357412725687027, 0.02, 0.03049677610397339, 0.04116208553314208, 0.05, 0.1]
+>>> Mejor δ por val_log_cosh: 0.04116208553314208 (val_log_cosh=0.045304700732)
+Resultados TEST - Escenario S (CNN)
+  loss (Huber):              0.073468
+  log_cosh:                  1.429258
+  within_eps_0_005          : 0.004185
+  within_eps_0_01           : 0.008761
+  within_eps_0_02           : 0.017984
+  within_eps_0_05           : 0.040971
+  within_eps_0_1            : 0.075175
+  AUTC[0.005–0.100]:         0.041622
+
+Escenario M:
+Grid δ (calibrado con cuantiles |e| en VAL): [0.01, 0.014598846435546875, 0.02, 0.02976226806640625, 0.05, 0.051824706792831444, 0.07143068313598633, 0.1]
+>>> Mejor δ por val_log_cosh: 0.02 (val_log_cosh=0.054059948772)
+Resultados TEST - Escenario M (CNN)
+  loss (Huber):              0.037523
+  log_cosh:                  1.552852
+  within_eps_0_005          : 0.004443
+  within_eps_0_01           : 0.008385
+  within_eps_0_02           : 0.016215
+  within_eps_0_05           : 0.040146
+  within_eps_0_1            : 0.077843
+  AUTC[0.005–0.100]:         0.041581
+
+Escenario L:
+Grid δ (calibrado con cuantiles |e| en VAL): [0.01, 0.02, 0.02793753147125244, 0.05, 0.05683806538581848, 0.09924322143197067, 0.1, 0.13649090826511381]
+>>> Mejor δ por val_log_cosh: 0.05683806538581848 (val_log_cosh=0.064002260566)
+
+Resultados TEST - Escenario L (CNN)
+  loss (Huber):              0.155775
+  log_cosh:                  2.215941
+  within_eps_0_005          : 0.001909
+  within_eps_0_01           : 0.003739
+  within_eps_0_02           : 0.007901
+  within_eps_0_05           : 0.018778
+  within_eps_0_1            : 0.038111
+  AUTC[0.005–0.100]:         0.019945
+
+=== Mejor δ por escenario (CNN, métrica común: val_log_cosh) ===
+  S: 0.04116208553314208  -> ./models_cnn_huber_sweep/cnn_huber_w20_h1_delta0_04116208553_S.keras
+  M: 0.02  -> ./models_cnn_huber_sweep/cnn_huber_w60_h5_delta0_02_M.keras
+  L: 0.05683806538581848  -> ./models_cnn_huber_sweep/cnn_huber_w120_h20_delta0_05683806539_L.keras
+
+
+Transformer:
+Escenario S:
+Grid δ (calibrado con cuantiles |e| en VAL): [0.00853496789932251, 0.01, 0.017357412725687027, 0.02, 0.03049677610397339, 0.04116208553314208, 0.05, 0.1]
+>>> Mejor δ por val_log_cosh: 0.04116208553314208 (val_log_cosh=0.046458147466)
+
+Resultados TEST - Escenario S (Transformer)
+  loss (Huber):              0.064830
+  log_cosh:                  1.311214
+  within_eps_0_005          : 0.005625
+  within_eps_0_01           : 0.012031
+  within_eps_0_02           : 0.024297
+  within_eps_0_05           : 0.055938
+  within_eps_0_1            : 0.118166
+  AUTC[0.005–0.100]:         0.060862
+
+Escenario M:
+Grid δ (calibrado con cuantiles |e| en VAL): [0.01, 0.014598846435546875, 0.02, 0.02976226806640625, 0.05, 0.051824706792831444, 0.07143068313598633, 0.1]
+>>> Mejor δ por val_log_cosh: 0.1 (val_log_cosh=0.056828793138)
+
+Resultados TEST - Escenario M (Transformer)
+  loss (Huber):              0.171053
+  log_cosh:                  1.493869
+  within_eps_0_005          : 0.007363
+  within_eps_0_01           : 0.014226
+  within_eps_0_02           : 0.027789
+  within_eps_0_05           : 0.063313
+  within_eps_0_1            : 0.122257
+  AUTC[0.005–0.100]:         0.065998
+
+Escenario L:
+Grid δ (calibrado con cuantiles |e| en VAL): [0.01, 0.02, 0.02793753147125244, 0.05, 0.05683806538581848, 0.09924322143197067, 0.1, 0.13649090826511381]
+>>> Mejor δ por val_log_cosh: 0.01 (val_log_cosh=0.063755229115)
+
+Resultados TEST - Escenario L (Transformer)
+  loss (Huber):              0.019598
+  log_cosh:                  1.585774
+  within_eps_0_005          : 0.004878
+  within_eps_0_01           : 0.009488
+  within_eps_0_02           : 0.019273
+  within_eps_0_05           : 0.046995
+  within_eps_0_1            : 0.089028
+  AUTC[0.005–0.100]:         0.048151
+
+=== Mejor δ por escenario (Transformer, métrica común: val_log_cosh) ===
+  S: 0.04116208553314208  -> ./models_transformer_huber_sweep/transformer_huber_w20_h1_delta0_04116208553_S.keras
+  M: 0.1  -> ./models_transformer_huber_sweep/transformer_huber_w60_h5_delta0_1_M.keras
+  L: 0.01  -> ./models_transformer_huber_sweep/transformer_huber_w120_h20_delta0_01_L.keras
